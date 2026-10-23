@@ -107,6 +107,15 @@ h1,h2,h3{font-family:Outfit,Inter,sans-serif;margin:0;text-wrap:balance;letter-s
 .press{margin-top:54px;text-align:center}
 .pk{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700}
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.stack{position:relative;display:block;width:min(980px,100%);margin:28px auto 0;aspect-ratio:1/0.62}
+.clip{position:absolute;display:block;background:#fff;padding:6px;border-radius:3px;box-shadow:0 22px 50px rgba(0,0,0,.55),0 2px 6px rgba(0,0,0,.3);transition:transform .25s,z-index 0s}
+.clip img{display:block;width:100%;height:auto}
+.clip.c1{left:0;top:2%;width:60%;transform:rotate(-3deg);z-index:1}
+.clip.c2{right:0;top:30%;width:56%;transform:rotate(2.5deg);z-index:2}
+.clip.c3{left:9%;top:42%;width:30%;transform:rotate(-1.5deg);z-index:3}
+.clip:hover,.clip:focus-visible{transform:rotate(0) scale(1.03);z-index:5}
+.psrc{margin:18px 0 0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:700px){.stack{aspect-ratio:1/1.14}.clip.c1{width:94%;top:0}.clip.c2{width:90%;top:30%}.clip.c3{width:56%;left:3%;top:52%}}
 .pcard{display:flex;flex-direction:column;border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line);text-decoration:none;color:#111;transition:transform .15s;text-align:left}
 .pcard:hover{transform:translateY(-2px)}
 .pimg{display:block;aspect-ratio:4/3;overflow:hidden;background:#fff;padding:10px}
@@ -291,11 +300,12 @@ footer a{color:#a5a3ae}
     </div>
     <div class="press">
       <div class="pk">Lo que dicen de mí</div>
-      <div class="pg">
-        <a class="pcard" href="https://www.infobae.com/espana/2025/09/25/jaime-higuera-empresario-multimillonario-a-los-22-anos-enfocate-en-aportar-valor-y-resolver-problemas/" target="_blank" rel="noopener"><span class="pimg"><img src="prensa/infobae.jpg" alt="Noticia de Infobae España sobre Jaime Higuera" loading="lazy"></span><span class="pmeta"><b>Infobae España</b><span>25 sep 2025</span></span></a>
-        <a class="pcard" href="https://www.elnacional.cat/enblau/es/television/clon-jose-elias-pero-mejorado-es-jaime-higuera-multimillonario-22-anos-no-compitas-crea_1490036_102.html" target="_blank" rel="noopener"><span class="pimg"><img src="prensa/elnacional.jpg" alt="Noticia de El Nacional · En Blau sobre Jaime Higuera" loading="lazy"></span><span class="pmeta"><b>El Nacional · En Blau</b><span>25 sep 2025</span></span></a>
-        <a class="pcard" href="https://www.merca2.es/2025/10/16/multimillonario-ingresos-2241404/" target="_blank" rel="noopener"><span class="pimg"><img src="prensa/merca2.jpg" alt="Noticia de Merca2 sobre Jaime Higuera" loading="lazy"></span><span class="pmeta"><b>Merca2</b><span>16 oct 2025</span></span></a>
+      <div class="pg stack">
+        <a class="clip c1" href="https://www.infobae.com/espana/2025/09/25/jaime-higuera-empresario-multimillonario-a-los-22-anos-enfocate-en-aportar-valor-y-resolver-problemas/" target="_blank" rel="noopener"><img src="prensa/infobae.jpg" alt="Infobae España: Jaime Higuera, empresario multimillonario a los 22 años"></a>
+        <a class="clip c2" href="https://www.merca2.es/2025/10/16/multimillonario-ingresos-2241404/" target="_blank" rel="noopener"><img src="prensa/merca2.jpg" alt="Merca2: Jaime Higuera (22 años), empresario multimillonario"></a>
+        <a class="clip c3" href="https://www.elnacional.cat/enblau/es/television/clon-jose-elias-pero-mejorado-es-jaime-higuera-multimillonario-22-anos-no-compitas-crea_1490036_102.html" target="_blank" rel="noopener"><img src="prensa/elnacional.jpg" alt="El Nacional: Jaime Higuera, multimillonario a los 22 años"></a>
       </div>
+      <p class="psrc">Infobae España · El Nacional · Merca2</p>
     </div>
   </div>
 </section>
